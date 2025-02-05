@@ -9,7 +9,12 @@
     <div class="menu-container">
       <a href="index.html"><img src="./img/logo-technomart.svg" width="220" height="68" alt="Логотип компании Техномарт"></a>
       <img src="./img/icon-search.svg" width="17" height="17" alt="Изображение лупы">
-      <!--Здесь будет форма-->
+      <form action="https://echo.htmlacademy.ru/courses" method="get">
+        <label>
+          Поиск:
+          <input type="text" name="search">
+        </label>
+      </form>
       <img src="./img/icon-bookmark.svg" width="14" height="16" alt="Изображение закладки">
       <img src="./img/icon-cart.svg" width="15" height="15" alt="Изображение тележки">
       <ul class="menu-list">
@@ -45,26 +50,83 @@
     </nav>
   </header>
   <main>
-    <ul class="breadcrumbs-list">
+    <ol class="breadcrumbs-list">
       <li class="breadcrambs-item">Каталог</li>
       <li class="breadcrambs-item">Инструмент</li>
       <li class="breadcrambs-item">Перфораторы</li>
-    </ul>
+    </ol>
     <h1>ПЕРФОРАТОРЫ</h1>
-    <section class="filter">
+    <aside class="filter">
       <h2>ФИЛЬТР:</h2>
-      <!--Здесь будет форма-->
-    </section>
-    <section class="sorting">
+      <div class="range-container">
+        <form action="https://echo.htmlacademy.ru/courses" method="post">
+        <label>ЦЕНА:
+          <div class="range"></div>
+          <input type="text" name="min"> - <input type="text" name="max">
+        </label>
+        </form>
+      </div>
+      <form action="https://echo.htmlacademy.ru/courses" method="get">
+        <fieldset>
+          <legend>ПРОИЗВОДИТЕЛИ:</legend>
+            <p>
+              <label><input type="checkbox" name="bosch" checked>BOSCH</label>
+            </p>
+            <p>
+              <label><input type="checkbox" name="interskol">ИНТЕРСКОЛ</label>
+            </p>
+            <p>
+              <label><input type="checkbox" name="makita" checked>MAKITA</label>
+            </p>
+            <p>
+              <label><input type="checkbox" name="dewalt">DEWALT</label>
+            </p>
+            <p>
+              <label><input type="checkbox" name="hitachi">HITACHI</label>
+            </p>
+        </fieldset>
+        <fieldset>
+          <legend>ПИТАНИЕ:</legend>
+          <ul>
+            <li>
+              <label><input type="radio" name="product-group" value="Accumulator feeding" checked>Аккумуляторные</label>
+            </li>
+            <li>
+              <label><input type="radio" name="product-group" value="Mains supply">Сетевые</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
+    </aside>
+    <aside class="sorting">
       <h2>СОРТИРОВКА:</h2>
-      <ul class="sorting-list">
-        <li class="sorting-item"><button class="active">ПО ЦЕНЕ</button></li>
-        <li class="sorting-item"><button>ПО ТИПУ</button></li>
-        <li class="sorting-item"><button>ПО ФУНКЦИОНАЛУ</button></li>
-      </ul>
-      <button class="ascending active"></button>
-      <button class="descending"></button>
-    </section>
+      <form action="https://echo.htmlacademy.ru/courses" method="get">
+        <fieldset>
+          <ul>
+            <li>
+              <label><input type="radio" name="sorting" value="By price" checked>По цене</label>
+            </li>
+            <li>
+              <label><input type="radio" name="sorting" value="By type">По типу</label>
+            </li>
+            <li>
+              <label><input type="radio" name="sorting" value="By functionality">По функционалу</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <ul>
+            <li>
+              <label><input type="radio" name="sorting" value="In ascending" checked></label>
+            </li>
+            <li>
+              <label><input type="radio" name="sorting" value="In descending"></label>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </aside>
     <section class="catalog">
       <h2>Каталог товаров</h2>
       <ul class="catalog-list">
@@ -177,5 +239,11 @@
       </div>
     </footer>
   </main>
+  <div class="cart-popup">
+    <button name="close"><img src="./img/icon-close.svg" width="21" height="21" alt="Закрыть"></button>
+    <p>Товар добавлен в корзину!</p>
+    <a href="#">ОФОРМИТЬ ЗАКАЗ</a>
+    <a href="#">ПРОДОЛЖИТЬ ПОКУПКИ</a>
+  </div>
 </body>
 </html>
